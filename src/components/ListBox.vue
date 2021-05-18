@@ -1,6 +1,6 @@
 <template>
   <transition name="fade" appear>
-    <li class="list bg">
+    <li class="list bg p-2">
       <b-form-checkbox
         class="mr-2"
         type="checkbox"
