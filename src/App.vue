@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="bg-gradient-third min-vh-100">
+    <div class="min-vh-100">
       <b-navbar
         toggleable="lg"
         type="light"
@@ -15,8 +15,9 @@
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav class="ml-auto">
-            <b-nav-item href="/">Home</b-nav-item>
-            <b-nav-item href="/pokedex">Pokedex</b-nav-item>
+            <router-link to="/" class="nav-link">Home</router-link>
+
+            <router-link to="/pokedex" class="nav-link">Pokedex</router-link>
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->

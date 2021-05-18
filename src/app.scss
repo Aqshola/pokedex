@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+
 $theme-colors: (
   'primary': #f2b807,
   'secondary': #f28f16,
@@ -6,6 +9,10 @@ $theme-colors: (
   'white': #f6f7f9,
   'third': #f5db13,
 );
+
+body {
+  font-family: 'Karla', sans-serif !important;
+}
 
 $enable-gradients: 'true';
 
@@ -29,15 +36,38 @@ $enable-gradients: 'true';
   }
 }
 
-.bg-gradient-third {
-  background: linear-gradient(180deg, #f5db13 0%, #f2b807 100%);
+.bg-gradient-main {
+  background-image: linear-gradient(180deg, #f5db13 0%, #f2b807 100%);
 }
 
 @import '../node_modules/bootstrap/scss/bootstrap';
 @import '../node_modules/bootstrap-vue/src/index.scss';
 
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.title-text,
+.title-desc,
+.nav-link {
+  font-family: 'Karla', sans-serif;
+}
+
+.nav-link {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.title-text {
+  width: 25rem;
+  font-size: 64px;
+  font-weight: 400;
+  @include media-breakpoint-down(xs) {
+    width: 100%;
+    font-size: 64px;
+  }
+}
+
+.title-desc {
+  width: 30rem;
+  font-weight: 500;
+  @include media-breakpoint-down(xs) {
+    width: 100%;
+  }
 }
