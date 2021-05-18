@@ -1,0 +1,56 @@
+// Then import Bootstrap an BootstrapVue SCSS files (order is important)
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin: auto;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  padding: 50px;
+  align-items: center;
+
+  .box-todo {
+    margin-top: 1rem;
+    width: 20rem;
+    h3 {
+      text-align: center;
+    }
+
+    padding: 10px;
+  }
+
+  .list {
+    display: flex;
+    align-items: center;
+
+    .text-todo {
+      flex-grow: 1;
+    }
+    button {
+      width: max-content;
+
+      height: max-content;
+    }
+  }
+}
