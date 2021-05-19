@@ -51,5 +51,6 @@
 export default {
   name: 'Home',
   components: {},
+  title: 'Home',
 };
 </script>

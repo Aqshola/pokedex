@@ -62,5 +62,6 @@ export default {
       this.rows = result.count;
     },
   },
+  title: 'PokeDex',
 };
 </script>
