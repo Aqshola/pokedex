@@ -20,6 +20,9 @@ Vue.use(BootstrapVueIcons);
 Vue.mixin(titleMixin);
 
 const router = new VueRouter({
+  scrollBehavior() {
+    return { x: 0, y: 0, behavior: 'smooth' };
+  },
   mode: 'history',
   routes,
 });
