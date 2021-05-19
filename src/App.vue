@@ -8,7 +8,7 @@
         class="shadow-sm px-5"
       >
         <b-navbar-brand href="/">
-          <img src="@/assets/Logo.png" alt="" srcset="" />
+          <img src="/img/Logo.png" alt="" srcset="" />
         </b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
