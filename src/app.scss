@@ -8,6 +8,14 @@ $theme-colors: (
   'dark': #212121,
   'white': #f6f7f9,
   'third': #f5db13,
+  'rock': #a1a1a1,
+  'bug': #70a83b,
+  'water': #a2cff0,
+  'fire': #f76546,
+  'gosth': #76aadb,
+  'ghost': #a974bc,
+  'ground': #9b897b,
+  'electric': #f7c545,
 );
 
 body {
@@ -60,7 +68,7 @@ h2,
   width: 25rem;
   font-size: 64px;
   font-weight: 400;
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(md) {
     width: 100%;
     font-size: 64px;
   }
@@ -69,7 +77,7 @@ h2,
 .title-desc {
   width: 30rem;
   font-weight: 500;
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(md) {
     width: 100%;
   }
 }
