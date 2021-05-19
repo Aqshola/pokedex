@@ -1,7 +1,9 @@
 <template>
   <transition name="slide">
     <b-container fluid>
-      <h2 class="text-dark mt-4">Many Pokemon for you to choose</h2>
+      <h2 class="text-dark text-center mt-4">
+        Many Pokemon for you to choose
+      </h2>
 
       <div class="container p-0">
         <b-row class="mt-5 d-flex p-4 flex-wrap p-md-0 justify-content-between">
