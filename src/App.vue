@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="min-vh-100">
+    <div class=" min-vh-100">
       <b-navbar
         toggleable="lg"
         type="light"
