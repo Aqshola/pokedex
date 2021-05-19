@@ -51,7 +51,7 @@ export default {
       const { query } = this.$route;
 
       if (query.page !== undefined) {
-        url += `&offset=${query.page}*15`;
+        url += `&offset=${query.page - 1}*15`;
       }
 
       const result = await (await fetch(url)).json();

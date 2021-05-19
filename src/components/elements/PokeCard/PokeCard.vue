@@ -79,9 +79,9 @@ export default {
     handlePictureBg(maintype) {
       switch (maintype) {
         case 'dark':
-        case 'rock':
         case 'stile':
-          return 'bg-rock';
+        case 'rock':
+          return 'bg-stile';
 
         case 'bug':
         case 'grass':
@@ -89,13 +89,22 @@ export default {
 
         case 'ice':
         case 'water':
+        case 'flying':
           return 'bg-ice';
 
-        case 'fire' || 'fighting' || 'dragon':
+        case 'fighting':
+        case 'dragon':
+        case 'fire':
           return 'bg-fire';
-        case 'normal' || 'gosth':
+
+        case 'normal':
+        case 'gosth':
           return 'bg-normal';
-        case 'poison' || 'psychic' || 'fairy' || 'ghost':
+
+        case 'poison':
+        case 'psychic':
+        case 'fairy':
+        case 'ghost':
           return 'bg-poison';
         case 'ground':
           return 'bg-ground';
