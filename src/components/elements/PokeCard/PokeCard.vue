@@ -2,25 +2,35 @@
   <b-col
     sm
     md
-    class="col-12 col-sm-12 col-md-5  col-lg-3  mb-3 shadow-sm bg-white d-flex p-0  card-poke text-dark mr-3 "
+    class="col-12 col-sm-12 col-md-5  col-lg-3  mb-3 shadow bg-white d-flex p-0  card-poke text-dark mr-3 "
   >
     <div class="w-50 p-2">
-      <h3 class="text-left">Pyroar</h3>
+      <h4 class="text-left">{{ pokeData.name }}</h4>
       <div class="stat-wrap">
-        <stat-info :statDesc="`Attack`" :statValue="419" />
-        <stat-info :statDesc="`Defend`" :statValue="41" />
+        <stat-info
+          :statDesc="stat.name"
+          :statValue="stat.base_stat"
+          v-for="stat in pokeData.stats"
+          :key="stat.name"
+        />
       </div>
 
       <div class="d-flex mt-2">
-        <element-info :elementDesc="`Poison`" />
-        <element-info :elementDesc="`Grass`" />
+        <element-info
+          :elementDesc="type.type.name"
+          v-for="type in pokeData.types"
+          :key="type.type.name"
+        />
       </div>
     </div>
 
     <div
-      class="bg-info w-50 d-flex align-items-center justify-content-center p-0"
+      :class="
+        `w-50 d-flex align-items-center justify-content-center p-0 ` +
+          handlePictureBg(pokeData.types[0].type.name)
+      "
     >
-      <img src="../../../assets/image 1.png" alt="poke" class="img-poke" />
+      <img :src="pokeData.picture" alt="poke" class="img-poke" />
     </div>
   </b-col>
 </template>
@@ -31,6 +41,72 @@ import StatInfo from './StatInfo.vue';
 export default {
   components: { StatInfo, ElementInfo },
   name: 'PokeCard',
+  props: {
+    url: String,
+  },
+  data() {
+    return {
+      pokeData: {
+        name: '',
+        stat: [],
+        types: [{ type: { name: 'white' } }],
+        picture: '',
+      },
+    };
+  },
+  created() {
+    this.getPokeData();
+  },
+  methods: {
+    async getPokeData() {
+      const result = await (await fetch(this.url)).json();
+      this.pokeData = {
+        name: result.name,
+        types: result.types,
+        stats: [
+          {
+            base_stat: result.stats[1].base_stat,
+            name: result.stats[1].stat.name,
+          },
+          {
+            base_stat: result.stats[2].base_stat,
+            name: result.stats[2].stat.name,
+          },
+        ],
+        picture: result.sprites.other['official-artwork'].front_default,
+      };
+    },
+    handlePictureBg(maintype) {
+      switch (maintype) {
+        case 'dark':
+        case 'rock':
+        case 'stile':
+          return 'bg-rock';
+
+        case 'bug':
+        case 'grass':
+          return 'bg-grass';
+
+        case 'ice':
+        case 'water':
+          return 'bg-ice';
+
+        case 'fire' || 'fighting' || 'dragon':
+          return 'bg-fire';
+        case 'normal' || 'gosth':
+          return 'bg-normal';
+        case 'poison' || 'psychic' || 'fairy' || 'ghost':
+          return 'bg-poison';
+        case 'ground':
+          return 'bg-ground';
+        case 'electric':
+          return 'bg-electric';
+
+        default:
+          return 'bg-white';
+      }
+    },
+  },
 };
 </script>
 

@@ -1,9 +1,6 @@
 <template>
-  <div
-    class="d-flex flex-column justify-content-center mr-3"
-    style="height:fit-content"
-  >
-    <div class="p-2 rounded-circle border border-dark">
+  <div class="d-flex  flex-column justify-content-center mr-3">
+    <div class="p-2 circle-info border border-dark">
       {{ statValue }}
     </div>
     <div>{{ statDesc }}</div>
@@ -14,14 +11,21 @@
 export default {
   name: 'StatInfo',
   props: {
-    statValue: String,
+    statValue: Number,
     statDesc: String,
   },
+  created() {},
 };
 </script>
 
 <style>
 .circle-info {
-  min-width: 30px;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  border-width: 3px !important;
 }
 </style>

@@ -8,12 +8,7 @@
     </b-row>
     <div class="container p-0">
       <b-row class="mt-5 d-flex p-4 flex-wrap p-md-0 justify-content-between">
-        <poke-card />
-        <poke-card />
-        <poke-card />
-        <poke-card />
-        <poke-card />
-        <poke-card />
+        <poke-card v-for="data in pokeData" :key="data.name" :url="data.url" />
       </b-row>
     </div>
   </b-container>
@@ -24,5 +19,22 @@ import PokeCard from '../components/elements/PokeCard/PokeCard.vue';
 export default {
   components: { PokeCard },
   name: 'Pokedex',
+  created() {
+    this.getPokeList();
+  },
+  data() {
+    return {
+      pokeData: [],
+    };
+  },
+  methods: {
+    async getPokeList() {
+      const result = await (
+        await fetch('https://pokeapi.co/api/v2/pokemon?limit=15')
+      ).json();
+
+      this.pokeData = result.results;
+    },
+  },
 };
 </script>
