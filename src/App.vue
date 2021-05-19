@@ -8,7 +8,7 @@
         class="shadow-sm px-5"
       >
         <b-navbar-brand href="/">
-          <img src="./assets/Logo.png" alt="pokemon logo" srcset="" />
+          <!-- <img src="./assets/Logo.png" alt="pokemon logo" srcset="" /> -->
         </b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
