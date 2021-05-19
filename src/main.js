@@ -9,6 +9,7 @@ import './app.scss';
 
 import App from './App.vue';
 import { routes } from './router';
+import './registerServiceWorker'
 
 Vue.config.productionTip = false;
 
