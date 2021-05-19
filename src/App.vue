@@ -23,6 +23,7 @@
           <!-- Right aligned nav items -->
         </b-collapse>
       </b-navbar>
+
       <router-view />
     </div>
   </div>
